@@ -21,7 +21,12 @@ const App = ({usuarios}) => {
 
   async function addUser() {
     console.log(user);
-    await axios.post(`http://localhost:3001/s21`, user);
+    try {
+      
+      await axios.post(`https://back-cosquin-production.up.railway.app/s21`, user);
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   function handleAnswerSubmit(isCorrect, e) {

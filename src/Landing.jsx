@@ -24,7 +24,12 @@ const Landing = ({ usuarios }) => {
     }
   };
   const handleSave = async() => {
-    const allUsiarios = await axios.get(`http://localhost:3001/s21`);
+    try {
+      const allUsiarios = await axios.get(`https://back-cosquin-production.up.railway.app/s21`);
+      
+    } catch (error) {
+      console.log(error.message)
+    }
     console.log(allUsiarios.data);
 
     var wb = xlsx.utils.book_new();
