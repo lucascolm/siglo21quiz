@@ -31,12 +31,12 @@ const Landing = ({ usuarios }) => {
       var wb = xlsx.utils.book_new();
       var workSheet = xlsx.utils.json_to_sheet(allUsuarios.data);
       xlsx.utils.book_append_sheet(wb, workSheet, "participantes");
+      xlsx.writeFile(wb, "myExcel.xlsx");
     } catch (error) {
       console.log(error.message);
     }
    
 
-    xlsx.writeFile(wb, "myExcel.xlsx");
   };
   const showAlert = () => {
     Swal.fire({
