@@ -67,7 +67,7 @@ const Landing = ({ usuarios }) => {
     });
   };
   return (
-    <div className="flex  mx-auto bg-[url('https://res.cloudinary.com/do3picw1u/image/upload/v1675898962/rapidito_q2fe3q.jpg')]  bg-cover bg-no-repeat h-[100vh] text-white max-w-screen-xl px-4  py-18  lg:h-screen ">
+    <div className="flex  mx-auto bg-[url('https://res.cloudinary.com/do3picw1u/image/upload/v1676608044/Captura_dblv3h.png')]  bg-cover bg-no-repeat h-[100vh] text-white max-w-screen-xl px-4  py-18  lg:h-screen ">
       <div className="mx-auto max-w-3xl mt-10 text-center text-black font-semibold">
         <h1 className="bg-white bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
           Responde la siguente
@@ -123,6 +123,7 @@ const Landing = ({ usuarios }) => {
             </span>
           </span>
           <button
+            disabled={true}
             className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
             onClick={showAlert}
           >

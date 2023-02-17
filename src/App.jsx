@@ -85,10 +85,10 @@ const App = ({usuarios}) => {
     // ;
   }
   return (
-    <div className="mx-auto w-full h-[100vh] px-4 py-16 sm:px-6 lg:px-8 lg:w-full  xl:w-3/4 bg-[url('https://res.cloudinary.com/do3picw1u/image/upload/v1675781762/TEMPLATE_APP_Mesa_de_trabajo_1_copia_6_scg8hu.jpg')] bg-bottom bg-cover bg-no-repeat ">
-      <div className="mt-6  space-y-4 ronded-lg bg-trasnparent backdrop-opacity-50  p-8 shadow-lg lg:col-span-3 lg:p-12 ">
+    <div className="mx-auto w-full h-[100vh] px-4 py-16 sm:px-6 lg:px-8 lg:w-full  xl:w-3/4 bg-[url('https://res.cloudinary.com/do3picw1u/image/upload/v1676608044/Captura_dblv3h.png')] bg-bottom bg-cover bg-no-repeat ">
+      <div className="mt-6 bg- space-y-4 ronded-lg bg-trasnparent backdrop-opacity-50  p-8 shadow-lg lg:col-span-3 lg:p-12 ">
         <div className="min-w-full ">
-          <h1 className="text-center text-2xl font-bold text-emerald-700 sm:text-3xl">
+          <h1 className="text-center text-2xl font-bold text-white sm:text-3xl">
             Pregunta {preguntaActual + 1} de {preguntas.length}
           </h1>
         </div>
@@ -105,7 +105,7 @@ const App = ({usuarios}) => {
               disabled={isDisabled}
               key={opcion.respuesta}
               onClick={(e) => handleAnswerSubmit(opcion.isCorrect, e)}
-              className="block w-full bg-green-200 p-4 text-black font-bold rounded-lg shadow hover:shadow-lg hover:scale-105 my-7"
+              className="block w-full bg-white p-4 text-black font-bold rounded-lg shadow hover:shadow-lg hover:scale-105 my-7"
             >
               {opcion.respuesta}
             </button>
