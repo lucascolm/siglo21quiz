@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import * as xlsx from "xlsx";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 
 const Landing = ({ usuarios }) => {
   const navigate = useNavigate();
-  const adminPass="soyadmin"
+  const adminPass = "soyadmin";
   const [input, setInput] = useState({
     nombre: "",
     email: "",
@@ -15,26 +15,26 @@ const Landing = ({ usuarios }) => {
   const handleClick = () => {
     if (!input.nombre || !input.email) {
       Swal.fire({
-        icon: 'error',
-        text: 'Para continuar complete los campos con tus datos.',
-      })
+        icon: "error",
+        text: "Para continuar complete los campos con tus datos.",
+      });
     } else {
       navigate("/game");
       localStorage.setItem("user", JSON.stringify(input));
     }
   };
-  const handleSave = async() => {
+  const handleSave = async () => {
     try {
-      const allUsiarios = await axios.get(`https://back-cosquin-production.up.railway.app/s21`);
-      
+      const allUsuarios = await axios.get(
+        `https://back-cosquin-production.up.railway.app/s21`
+      );
+      var wb = xlsx.utils.book_new();
+      var workSheet = xlsx.utils.json_to_sheet(allUsuarios.data);
+      xlsx.utils.book_append_sheet(wb, workSheet, "participantes");
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
-    console.log(allUsiarios.data);
-
-    var wb = xlsx.utils.book_new();
-    var workSheet = xlsx.utils.json_to_sheet(allUsiarios.data);
-    xlsx.utils.book_append_sheet(wb, workSheet, "participantes");
+   
 
     xlsx.writeFile(wb, "myExcel.xlsx");
   };
@@ -71,7 +71,7 @@ const Landing = ({ usuarios }) => {
       <div className="mx-auto max-w-3xl mt-10 text-center text-black font-semibold">
         <h1 className="bg-white bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
           Responde la siguente
-          <span className="sm:block"> encuesta del medio ambiente  </span>
+          <span className="sm:block"> encuesta del medio ambiente </span>
         </h1>
 
         <div>
