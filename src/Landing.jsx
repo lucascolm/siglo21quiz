@@ -35,8 +35,6 @@ const Landing = ({ usuarios }) => {
     } catch (error) {
       console.log(error.message);
     }
-   
-
   };
   const showAlert = () => {
     Swal.fire({
@@ -129,6 +127,16 @@ const Landing = ({ usuarios }) => {
           >
             guardar datos
           </button>
+        </div>
+        <div className="mt-1 mb-0 space-y-4 rounded-lg p-8">
+          <p className="mx-auto  max-w-xl sm:text-xl sm:leading-relaxed">
+            *Todos los participantes de la trivia de Sustentabilidad de Cosquín
+            Rock 2023, participarán de un sorteo por un APLV VIRTUAL con inicio
+            formato carrusel (comienzan los 10 de cada mes) que se realizará la
+            semana del 27 de febrero del 2023 a cargo de Universidad Siglo21.
+            *Serán 3 ganadores que serán contactados vía mail por Universidad
+            Siglo 21. *La fecha límite de inicio de cada APLV es el 1/03/2023.
+          </p>
         </div>
       </div>
     </div>
